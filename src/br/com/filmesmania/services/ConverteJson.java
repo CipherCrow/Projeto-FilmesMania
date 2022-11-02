@@ -9,17 +9,17 @@ import br.com.filmesmania.model.Filme;
 import br.com.filmesmania.model.Pacote;
 
 public class ConverteJson {
-	String jason;
-	Gson gson;
-	Pacote pacotao;
+	private String jason;
+	private Gson gson;
+	private Pacote pacotao;
 	
 	public ConverteJson(String Json) {
-		String jason = Json;
-		gson = new GsonBuilder().create();
-		pacotao = gson.fromJson(jason, Pacote.class);
+		this.jason = Json;
+		this.gson = new GsonBuilder().create();
+		this.pacotao = gson.fromJson(jason, Pacote.class);
 	}
 	
 	public List<Filme> pegarFilmes(){
-		return pacotao.getItems();
+		return this.pacotao.getItems();
 	}
 }

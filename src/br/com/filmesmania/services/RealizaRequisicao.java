@@ -25,7 +25,7 @@ public class RealizaRequisicao {
 	}
 	
 	public String buscarResposta() {
-		return resposta.body();
+		return this.resposta.body();
 	}
 	
 }
