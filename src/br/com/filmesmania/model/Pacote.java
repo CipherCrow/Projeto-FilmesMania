@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Pacote {
 
-	List<Filme> items;
+	private List<Filme> items;
 	public Pacote(List<Filme> items) {
 		this.items = items;
 	}
