@@ -1,6 +1,5 @@
 package br.com.filmesmania.services;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -14,14 +13,19 @@ public class RealizaRequisicao {
 	private HttpRequest requisicao;
 	private HttpResponse<String> resposta;
 	
-	public RealizaRequisicao(String chave) throws IOException, InterruptedException {
-		this.cliente = HttpClient.newHttpClient();
-		this.requisicao = HttpRequest.newBuilder()
-				.GET()
-				.timeout(Duration.ofSeconds(10))
-				.uri(URI.create(URL_GET+chave))
-				.build();
-		this.resposta = cliente.send(requisicao,HttpResponse.BodyHandlers.ofString());
+	public RealizaRequisicao(String chave){
+		try {
+			this.cliente = HttpClient.newHttpClient();
+			this.requisicao = HttpRequest.newBuilder()
+					.GET()
+					.timeout(Duration.ofSeconds(10))
+					.uri(URI.create(URL_GET+chave))
+					.build();
+			this.resposta = cliente.send(requisicao,HttpResponse.BodyHandlers.ofString());	
+		}catch(Exception e) {
+			System.out.println("Erro em "+ this + ": " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 	
 	public String buscarResposta() {
