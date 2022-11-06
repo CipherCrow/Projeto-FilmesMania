@@ -30,73 +30,41 @@ public class Filme {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public Integer getRank() {
 		return rank;
-	}
-
-	public void setRank(Integer rank) {
-		this.rank = rank;
 	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	public String getFullTitle() {
 		return fullTitle;
-	}
-
-	public void setFullTitle(String fullTitle) {
-		this.fullTitle = fullTitle;
 	}
 
 	public Integer getYear() {
 		return year;
 	}
 
-	public void setYear(Integer year) {
-		this.year = year;
-	}
 
 	public String getImage() {
 		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 
 	public String getCrew() {
 		return crew;
 	}
 
-	public void setCrew(String crew) {
-		this.crew = crew;
-	}
 
 	public Double getImDbRating() {
 		return imDbRating;
 	}
 
-	public void setImDbRating(Double imDbRating) {
-		this.imDbRating = imDbRating;
-	}
 
 	public Integer getImDbRatingCount() {
 		return imDbRatingCount;
 	}
 
-	public void setImDbRatingCount(Integer imDbRatingCount) {
-		this.imDbRatingCount = imDbRatingCount;
-	}
 	
 	@Override
 	public String toString() {
