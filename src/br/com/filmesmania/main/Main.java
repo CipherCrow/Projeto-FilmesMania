@@ -1,9 +1,8 @@
 package br.com.filmesmania.main;
 
-import java.util.List;
 import java.util.Scanner;
 
-import br.com.filmesmania.model.Filme;
+import br.com.filmesmania.control.GerenciaPaginaHtml;
 import br.com.filmesmania.services.ConverteJson;
 import br.com.filmesmania.services.RealizaRequisicao;
 
@@ -21,12 +20,13 @@ public class Main {
 			System.out.println();
 			
 			RealizaRequisicao requisicao = new RealizaRequisicao(key);
-			ConverteJson conversor = new ConverteJson(requisicao.buscarResposta());
-			List<Filme> filmes = conversor.pegarFilmes();
-			filmes.forEach(e -> System.out.println(e.toString()));
+			ConverteJson conversor = new ConverteJson(requisicao.buscarResposta());		
+			GerenciaPaginaHtml html = new GerenciaPaginaHtml(conversor.pegarFilmes());
+			html.geraHtml();
+			html.informacaoArquivo();
+			
 		}catch(Exception e) {
 			System.out.println("Erro:" + e.getMessage());
 		}
-
 	}
 }
