@@ -77,7 +77,26 @@ public enum PaginaHtml {
 					""";
 		}
 	},
-	
+	TEMPLATEFILME{
+		public String getHtml() {
+			return """
+			<div class="separador col-sm-6 col-md-4 col-lg-3">
+                <div class="card col-12 espaco bg-secondary">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">{filme.titulo}</h5>
+                    </div>
+                    <img src="{filme.imagem}" class="card-img-top" alt="...">
+                    <div class="card-body row text-center text-white">
+                        <p class="card-text col-6 col-md-4">Posição: <strong class="text-black">{filme.rank}</strong></p>
+                        <p class="card-text col-6 col-md-4">Nota: <strong class="text-black">{filme.rating}</strong></p>
+                        <p class="card-text col-12 col-md-4">Ano: <strong class="text-black">{filme.year}</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!--CARD INDIVIDUAL-->
+					""";
+		}
+	},
 	FECHARHTML5{
 		public String getHtml() {
 			return """
