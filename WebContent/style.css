@@ -4,13 +4,6 @@
 *{
     font-family:Roboto,Helvetica,Arial,sans-serif;
 }
-.espaco {
-    padding: 0.1rem ;
-}
-img{
-    max-width: 95%;
-    align-self: center;
-}
 
 /*Utilidades*/
 .texto-destaque{
@@ -37,4 +30,11 @@ body{
 }
 .card{
     background-color: #1A1A1A;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    --bs-card-border-width: 0;
+}
+.card img{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
