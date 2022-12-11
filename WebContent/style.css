@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/*Geral*/
+*{
+    font-family:Roboto,Helvetica,Arial,sans-serif;
+}
+.espaco {
+    padding: 0.1rem ;
+}
+img{
+    max-width: 95%;
+    align-self: center;
+}
+
+/*Utilidades*/
+.texto-destaque{
+    color: #E0B416;
+}
+
+/*Construcao*/
+body{
+    background: black;
+}
+.header-principal{
+    background-color: #121212;
+    margin-bottom: 1rem;
+}
+.header-principal .logo{
+    padding: .8rem 0;
+}
+.header-principal .logo h3{
+    display: inline-block;
+    background-color: #E0B416;
+    font-weight: 600;        	
+    padding: 0.3rem;
+    border-radius: 10px;
+}
+.card{
+    background-color: #1A1A1A;
+}
