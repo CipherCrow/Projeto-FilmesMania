@@ -36,8 +36,8 @@
                         <p class="card-text col-12 fs-3 ">Bem vindo ao consultor <span class="texto-destaque">IMDb!</span></p>
                         <div class="apresentacao col-12">
                             <img src="images/apresentacao-imdb.jpg" alt="Logo da IMDb" class="apresentacao_img">
-                            <p class="card-text col-12 fs-5 apresentacao-texto-baixo">AtravÃ©s deste site, vocÃª pode acessar a API da IMDb e adquirir 
-                                informaÃ§Ãµes sobre qualquer filme que desejar! Note que para continuar, Ã© preciso uma KEY IMDB. Caso vocÃª ainda <span class="apresentacao-texto-nao">nÃ£o</span> tenha 
+                            <p class="card-text col-12 fs-5 apresentacao-texto-baixo">Através deste site, você pode acessar a API da IMDb e adquirir 
+                                informações sobre qualquer filme que desejar! Note que para continuar, é preciso uma KEY IMDB. Caso você ainda <span class="apresentacao-texto-nao">nÃ£o</span> tenha 
                                 uma KEY, por gentileza, <a href="https://imdb-api.com/" target="_blank" class="texto-destaque text-uppercase">Clique aqui</a>.</p>
                             <hr>
                         </div>
