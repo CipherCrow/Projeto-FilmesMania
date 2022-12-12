@@ -1,7 +1,8 @@
 package br.com.filmesmania.servlets;
 
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.filmesmania.control.GerenciaPaginaHtml;
+import br.com.filmesmania.model.Filme;
 import br.com.filmesmania.services.ConverteJson;
 import br.com.filmesmania.services.RealizaRequisicao;
 
@@ -18,29 +19,19 @@ import br.com.filmesmania.services.RealizaRequisicao;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Bem vindo ao meu primeiro projeto utilizando Java!");
-		System.out.println("A principio, sera um programa simples que consumira a API da IMDb para consultas de filmes!");
-		System.out.println("Entao, e gerado um arquivo HTML na pasta do projeto com os filmes consultados da API.");
-		
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String chave = request.getParameter("chave");
+		PrintWriter out = response.getWriter();
+		RealizaRequisicao requisicao = new RealizaRequisicao(chave);
+		ConverteJson conversor = new ConverteJson(requisicao.buscarResposta());		
 		
-		try(Scanner sc = new Scanner(System.in)) {
-			System.out.println("Por gentileza, poderia inserir sua chave da IMBd?");
-			System.out.print("Chave: ");
-			String key = sc.next();
-			System.out.println();
-			
-			RealizaRequisicao requisicao = new RealizaRequisicao(key);
-			ConverteJson conversor = new ConverteJson(requisicao.buscarResposta());		
-			GerenciaPaginaHtml html = new GerenciaPaginaHtml(conversor.pegarFilmes());
-			html.geraHtml();
-			html.informacaoArquivo();
-			
-		}catch(Exception e) {
-			System.out.println("Erro:" + e.getMessage());
+		out.print("Sua chave '" + chave + "' é usada.");		
+		List<Filme> filmes = conversor.pegarFilmes();
+		for (Filme filme : filmes) {
+			out.print(filme.toString());
 		}
+
 	}
 	
 
