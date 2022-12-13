@@ -46,7 +46,7 @@
 
                     <div class="card-body row text-center text-white">
                         <p class="card-text col-12 fs-4 mb-1">ACESSAR <span class="texto-destaque">IMDb</span></p>
-                        <form action="/FilmesMania/Login" class="formulario-login" method="post">
+                        <form action="/FilmesMania/login" class="formulario-login" method="post">
                             
                             <div class="form-wrapper">
                                 <label for="chave">API KEY</label>
