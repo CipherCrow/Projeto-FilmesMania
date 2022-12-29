@@ -1,5 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/controler" var="linkServletLogin"/>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,11 +20,21 @@
 
 <body>
     <!-- HEADER-->
-    <header class="text-center text-white header-principal">
-        <div class="logo">
-            <h4 class="text-black">LOGIn</h4>
-        </div>
-    </header>
+    <div class="header-container">
+        <div class="container">
+            <header class="d-flex align-items-center justify-content-around text-center text-white header-principal">
+                <div class="logo">
+                    <h4 class="text-black"><span class="text-uppercase">CardÃ¡pi</span>o</h4>
+                </div>
+                <div class="usuario-logado d-flex align-items-center">
+                    <div class="key-usuario me-1 fw-bold">SUA CHAVE AQUI</div>
+                    <div class="sair ">
+                        <button class="btn-diferente texto-destaque fw-bold" action="">SAIr</button>
+                    </div>
+                </div>        
+            </header>   
+        </div>     
+    </div>
     <!-- HEADER -->
     <!-- MAIN-->
     <main class="container text-center" id="filmes">
@@ -38,26 +46,13 @@
                         <p class="card-text col-12 fs-3 ">Bem vindo ao consultor <span class="texto-destaque">IMDb!</span></p>
                         <div class="apresentacao col-12">
                             <img src="images/apresentacao-imdb.jpg" alt="Logo da IMDb" class="apresentacao_img">
-                            <p class="card-text col-12 fs-5 apresentacao-texto-baixo">Através deste site, você pode acessar a API da IMDb e adquirir 
-                                informações sobre qualquer filme que desejar! Note que para continuar, é preciso uma KEY IMDB. Caso você ainda <span class="apresentacao-texto-nao">não</span> tenha 
+                            <p class="card-text col-12 fs-5 apresentacao-texto-baixo">Atravï¿½s deste site, vocï¿½ pode acessar a API da IMDb e adquirir 
+                                informaï¿½ï¿½es sobre qualquer filme que desejar! Note que para continuar, ï¿½ preciso uma KEY IMDB. Caso vocï¿½ ainda <span class="apresentacao-texto-nao">nï¿½o</span> tenha 
                                 uma KEY, por gentileza, <a href="https://imdb-api.com/" target="_blank" class="texto-destaque text-uppercase">Clique aqui</a>.</p>
                             <hr>
                         </div>
                     </div>
                     <!--Texto apresentacao-->
-
-                    <div class="card-body row text-center text-white">
-                        <p class="card-text col-12 fs-4 mb-1">ACESSAR <span class="texto-destaque">IMDb</span></p>
-                        <form action='${linkServletLogin}' class="formulario-login" method="post">
-                            
-                            <div class="form-wrapper">
-                                <label for="chave">API KEY</label>
-                                <input type="text" name="chave" class="p-1 ms-1" placeholder="Insira sua KEY">                            
-                            </div>
-                            <input type="submit" value="Acessar" class="btn-diferente text-white fw-bold">
-                        </form>
-                    </div>  
-                    <!--Corpo-->
                 </div>
             </div>
             <!--CARD INDIVIDUAL-->
