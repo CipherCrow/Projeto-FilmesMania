@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.filmesmania.services.ConverteJson;
 import br.com.filmesmania.services.RealizaRequisicao;
 
-public class ExibirTop250FilmesAcao implements Acao {
+public class ExibirTop250Filmes implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) {

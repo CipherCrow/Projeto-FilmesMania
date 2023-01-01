@@ -53,7 +53,7 @@
                             <div class="form-wrapper">
                                 <label for="chave">API KEY</label>
                                 <input type="text" name="chave" class="p-1 ms-1" placeholder="Insira sua KEY">
-                                <input type="hidden" name="acao" value="login">                            
+                                <input type="hidden" name="ordem" value="Login">                            
                             </div>
                             <input type="submit" value="Acessar" class="btn-diferente text-white fw-bold">
                         </form>

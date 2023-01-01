@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.filmesmania.services.ConverteJson;
 import br.com.filmesmania.services.RealizaRequisicao;
 
-public class LoginAcao implements Acao{
+public class Login implements Acao{
 	
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

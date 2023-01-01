@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.filmesmania.acao.ExibirTop250FilmesAcao;
-import br.com.filmesmania.acao.LoginAcao;
+import br.com.filmesmania.acao.Acao;
+import br.com.filmesmania.acao.ExibirTop250Filmes;
+import br.com.filmesmania.acao.Login;
 import br.com.filmesmania.acao.RealizarLogin;
 
 
@@ -20,22 +21,20 @@ public class ControllerServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String acao = request.getParameter("acao");
+		String ordem = request.getParameter("ordem");
+		
+		String nomeDaClasse = "br.com.filmesmania.acao." + ordem;
 		String respostaClasse = null;
 		
-		if(acao.equals("realizarLogin")) {
-			RealizarLogin executor = new RealizarLogin();
-			respostaClasse = executor.executa(request, response);
-		}
-		else if(acao.equals("login")) {
-			LoginAcao executor = new LoginAcao();			
-			respostaClasse = executor.executa(request, response);	
-		}
-		else if(acao.equals("exibirTop250Filmes")) {
-			ExibirTop250FilmesAcao executor = new ExibirTop250FilmesAcao();
-			respostaClasse = executor.executa(request,response);
-		}
-		
+		Acao acao;
+		try {
+			Class classe = Class.forName(nomeDaClasse); // Separa memória para usar aquela classe no projeto
+			acao = (Acao) classe.newInstance();  // Instancia a Classe em uma acao
+			respostaClasse = acao.executa(request, response);
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+			throw new ServletException(e);
+		} 
+				
 		String[] tipoEEndereco = respostaClasse.split(":");
 		
 		if(tipoEEndereco[0].equals("forward")) {
