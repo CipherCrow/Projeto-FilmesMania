@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.filmesmania.services.ConverteJson;
-import br.com.filmesmania.services.RealizaRequisicao;
+import br.com.filmesmania.acao.ExibirTop250FilmesAcao;
+import br.com.filmesmania.acao.LoginAcao;
 
 
 @WebServlet("/controler")
@@ -20,14 +20,25 @@ public class ControllerServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acao = request.getParameter("acao");
+		String respostaClasse = null;
 		
 		if(acao.equals("login")) {
-			String chave = request.getParameter("chave");
-			RequestDispatcher rd = request.getRequestDispatcher("/filmes.jsp");
-			request.setAttribute("filmes", (chave));
-			rd.forward(request,response);	
+			LoginAcao executor = new LoginAcao();			
+			respostaClasse = executor.executa(request, response);	
+		}
+		else if(acao.equals("exibirTop250Filmes")) {
+			ExibirTop250FilmesAcao executor = new ExibirTop250FilmesAcao();
+			respostaClasse = executor.executa(request,response);
 		}
 		
+		String[] tipoEEndereco = respostaClasse.split(":");
+		
+		if(tipoEEndereco[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher(tipoEEndereco[1]);
+			rd.forward(request,response);
+		} else {
+			response.sendRedirect(tipoEEndereco[1]);
+		}
 
 	}
 	
