@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.filmesmania.acao.Acao;
-import br.com.filmesmania.acao.ExibirTop250Filmes;
-import br.com.filmesmania.acao.Login;
-import br.com.filmesmania.acao.RealizarLogin;
 
 
 @WebServlet("/controler")
