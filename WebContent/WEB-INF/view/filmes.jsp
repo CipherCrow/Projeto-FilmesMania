@@ -15,20 +15,31 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/resources/style.css">
 
-    <title>Top 250</title>
+    <title>IMDb Consultor - Top250</title>
 </head>
 <!--HEAD-->
 <!--BODY-->
 
 <body class="bg-dark">
     <!-- HEADER-->
-    <header class="text-center text-white header-principal">
-        <div class="logo">
-            <h4 class="text-black">Top 250 Filmes IMDb</h4>
-        </div>
-    </header>
+    <div class="header-container">
+        <div class="container">
+            <header class="d-flex align-items-center justify-content-around text-center text-white header-principal">
+                <div class="logo">
+                    <h4 class="text-black"><span class="text-uppercase">Top 250 Filmes IMD</span>b</h4>
+                </div>
+                <div class="usuario-logado d-flex align-items-center">
+                    <div class="key-usuario me-1 fw-bold">${usuarioLogado.key}</div>
+                    <form class="sair" action="${linkServletLogin}" method="get">
+                        <input type="hidden" name="ordem" value="Deslogar">
+                        <input type="submit" class="btn-diferente texto-destaque fw-bold" value="SAIr">
+                    </form>
+                </div>        
+            </header>   
+        </div>     
+    </div>
     <!-- HEADER -->
     <!-- MAIN-->
     <main class="container text-center" id="filmes">

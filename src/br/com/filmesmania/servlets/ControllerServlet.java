@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.filmesmania.acao.Acao;
 
@@ -18,7 +19,16 @@ public class ControllerServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String ordem = request.getParameter("ordem");
+		HttpSession sessao = request.getSession();
+		boolean usuarioNaoLogado = (sessao.getAttribute("usuarioLogado") == null);
+		boolean ehPaginaDesprotegida = !( (ordem.equals("RealizarLogin") | ordem.equals("Login")) );
+		
+		if(ehPaginaDesprotegida && usuarioNaoLogado ) {
+			response.sendRedirect("controler?ordem=RealizarLogin");
+			return;
+		}
 		
 		String nomeDaClasse = "br.com.filmesmania.acao." + ordem;
 		String respostaClasse = null;
@@ -38,7 +48,7 @@ public class ControllerServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view"+tipoEEndereco[1]);
 			rd.forward(request,response);
 		} else {
-			response.sendRedirect("/WEB-INF/view"+tipoEEndereco[1]);
+			response.sendRedirect(tipoEEndereco[1]);
 		}
 
 	}
