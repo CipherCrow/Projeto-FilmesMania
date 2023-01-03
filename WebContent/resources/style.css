@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/*Geral*/
+*{
+    font-family:Roboto,Helvetica,Arial,sans-serif;
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*Utilidades*/
+.texto-destaque{
+    color: #E0B416;
+}
+.btn-diferente{
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: .5rem;
+}
+.btn-diferente:hover{
+    background-color: #2C2C2C;
+    transition: .1s;
+}
+
+/*         PAGINA LOGIN             */
+/*Construcao*/
+body{
+    background: black;
+}
+.header-container{
+    background-color: #121212;
+    margin-bottom: 1rem;
+}
+.header-principal .logo{
+    padding: .8rem 0;
+}
+.header-principal .logo h4{
+    display: inline-block;
+    background-color: #E0B416;
+    font-weight: bold;        	
+    padding: 0.3rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.div-superior-login{
+    padding-bottom: 0;
+}
+.apresentacao{
+
+}
+.apresentacao_img{
+    max-width: 80%;
+    border-radius: 20px;
+}
+.apresentacao-texto-baixo{
+    margin-top: 1rem;
+    text-align: justify;
+}
+.apresentacao-texto-nao{
+    text-decoration: underline;
+}
+.apresentacao a:hover{
+    text-decoration: underline;
+    color: #E0B416;
+}
+
+.formulario-login .form-wrapper{
+    display: inline-block;
+}
+.form-wrapper input[type="text"]{
+    width: 8rem;
+    text-align: center;
+}
+
+/*Exibicao*/
+.card{
+    background-color: #1A1A1A;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    --bs-card-border-width: 0;
+}
+.card-img-top{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/*         PAGINA FILMES             */
