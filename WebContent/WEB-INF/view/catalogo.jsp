@@ -25,7 +25,7 @@
     <!-- HEADER-->
     <div class="header-container">
         <div class="container">
-            <header class="d-flex align-items-center justify-content-around text-center text-white header-principal">
+            <header class="d-flex align-items-center justify-content-around text-center text-white header-principal flex-column flex-sm-row">
                 <div class="logo">
                     <h4 class="text-black"><span class="text-uppercase">Cardápi</span>o</h4>
                 </div>
