@@ -42,7 +42,25 @@
     <!-- HEADER -->
     <!-- MAIN-->
     <main class="container text-center" id="filmes">
-        
+        <div class="row justify-content-evenly">
+			<c:forEach items="${filmes}" var="filme">
+			
+	            <div class="separador col-sm-6 col-md-4 col-lg-3">
+	                <div class="card col-12">
+	                    <img src="${filme.image}" class="card-img-top" alt="${filme.fullTitle}">
+	                    <div class="card-body row text-center text-white">
+	                        <h5 class="card-title">${filme.fullTitle}</h5>
+	                        <p class="card-text col-6 col-md-4">Pos: <strong class="texto-destaque">${filme.rank}</strong></p>
+	                        <p class="card-text col-6 col-md-4">Nota: <strong class="texto-destaque">${filme.imDbRating}</strong></p>
+	                        <p class="card-text col-12 col-md-4">Ano: <strong class="texto-destaque">${filme.year}</strong></p>
+	                    </div>
+	                </div>
+	            </div>
+	            <!--CARD INDIVIDUAL-->
+	            
+			</c:forEach>
+        </div>
+        <!--ROW DE FILMES-->
     </main>
     <!-- MAIN-->
 </body>

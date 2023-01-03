@@ -24,6 +24,7 @@ a{
     transition: .1s;
 }
 
+/*         PAGINA LOGIN             */
 /*Construcao*/
 body{
     background: black;
@@ -84,4 +85,9 @@ body{
 .card-img-top{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+/*         PAGINA FILMES             */
+.card-separador{
+    padding: .5rem;
 }

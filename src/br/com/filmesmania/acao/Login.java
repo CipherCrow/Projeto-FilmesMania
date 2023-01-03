@@ -17,7 +17,7 @@ public class Login implements Acao{
 		HttpSession sessao = request.getSession();
 		sessao.setAttribute("usuarioLogado", new Usuario(chave));
 		
-		return "forward:/catalogo.jsp";	
+		return "redirect:controler?ordem=ExibirTop250Filmes";	
 	}
 	
 }
