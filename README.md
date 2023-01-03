@@ -21,15 +21,15 @@ No futuro, planejo aperfeiçoar esse código, implementando Springboot nesse sis
 ## Como acessar
 ### Apache Tomcat localmente
 1. Extraia o arquivo .War da pasta "\build" para dentro da pasta "suaVersãoTomCat\webapps";
-2. Inice o servidor através do script "Startup" dentro da pasta "suaVersãoTomCat\bin";
-3. Pelo navegador, acesse "http://localhost:8080/FilmesMania/login.jsp"
+2. Inicie o servidor através do script "Startup" dentro da pasta "suaVersãoTomCat\bin";
+3. Pelo navegador, acesse "http://localhost:8080/FilmesMania/controler?ordem=RealizaLogin"
 
 ### Eclipse IDE
 1. Realize o procedimento para instalar o TomCat no link abaixo:
     https://www.devmedia.com.br/instalacao-e-configuracao-do-apache-tomcat-no-eclipse/27360
 2. Para associar o projeto ao servidor, clique com o botão direito do mouse no servidor Tomcat que foi criado na visualização Servidor e selecione Incluir e remover projetos. Selecione os projetos do serviço e cliente na lista de Projetos Disponíveis e clique em Incluir.
 3. Inicie o servidor clicando com o botão direito do mouse em cima do servidor e dando "Start Server" 
-4. Pelo navegador, acesse "http://localhost:8080/FilmesMania/login.jsp"
+4. Pelo navegador, acesse "http://localhost:8080/FilmesMania/controler?ordem=RealizaLogin"
 
 ### <PLACEHOLDER>
 1. Acesse o Link abaixo para visualizar a aplicação.
