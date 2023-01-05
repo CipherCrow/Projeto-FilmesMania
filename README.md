@@ -31,9 +31,6 @@ No futuro, planejo aperfeiçoar esse código, implementando Springboot nesse sis
 3. Inicie o servidor clicando com o botão direito do mouse em cima do servidor e dando "Start Server" 
 4. Pelo navegador, acesse "http://localhost:8080/FilmesMania/controler?ordem=RealizaLogin"
 
-### <PLACEHOLDER>
-1. Acesse o Link abaixo para visualizar a aplicação.
-
 ## Ícones
 - :up: Atualização.
 - :bug: Correção.
