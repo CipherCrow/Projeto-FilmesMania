@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class RealizaRequisicao {
 
-	private final String URL_GET = "https://imdb-api.com/en/API/Top250Movies/";
+	private final String URL_GET = "https://imdb-api.com/br/API/Top250Movies/";
 	private HttpClient cliente;
 	private HttpRequest requisicao;
 	private HttpResponse<String> resposta;
